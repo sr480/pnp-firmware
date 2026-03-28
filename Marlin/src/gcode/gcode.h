@@ -1248,6 +1248,10 @@ private:
     static void M3426();
   #endif
 
+  #if ENABLED(HX711_SENSOR)
+    static void M901();
+  #endif
+
   #if ENABLED(MAX7219_GCODE)
     static void M7219();
   #endif

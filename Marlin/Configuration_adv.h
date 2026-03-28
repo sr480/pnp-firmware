@@ -3567,6 +3567,36 @@
 //#define POWER_MONITOR_CURRENT   // Monitor the system current
 //#define POWER_MONITOR_VOLTAGE   // Monitor the system voltage
 
+// @section sensors
+
+/**
+ * HX711 Load Cell ADC (two-wire DT/SCK)
+ *
+ * Enable support for one or more HX711 modules and read them with M901.
+ * Each module requires DT and SCK pins. Defaults are in the board pins file.
+ */
+//#define HX711_SENSOR
+#if ENABLED(HX711_SENSOR)
+  // Sensor 1
+  // #define HX711_1_OFFSET (0x8FFFFF)
+  #define HX711_1_OFFSET_A (7894554)
+  #define HX711_1_OFFSET_B (3893321)
+  #define HX711_1_SCALE_A  (100.0f / HX711_1_OFFSET_A)
+  #define HX711_1_SCALE_B  (100.0f / HX711_1_OFFSET_B)
+  // #define HX711_1_SCALE_A  (0.00001773f)
+  // #define HX711_1_SCALE_B  (HX711_1_SCALE_A * 2)
+
+  // Sensor 2 (set pins in pins or override here)
+  //#define HX711_2_DOUT_PIN -1
+  //#define HX711_2_SCK_PIN  -1
+  #define HX711_2_OFFSET 0
+  #define HX711_2_SCALE_A  1.0f
+  #define HX711_2_SCALE_B  1.0f
+
+  #define HX711_UNITS_LABEL "kPa"
+  #define HX711_READY_TIMEOUT_MS 500
+#endif
+
 #if ENABLED(POWER_MONITOR_CURRENT)
   #define POWER_MONITOR_VOLTS_PER_AMP    0.05000  // Input voltage to the MCU analog pin per amp  - DO NOT apply more than ADC_VREF!
   #define POWER_MONITOR_CURRENT_OFFSET   0        // Offset (in amps) applied to the calculated current
