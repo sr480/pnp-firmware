@@ -129,6 +129,10 @@
   #include "feature/bedlevel/bdl/bdl.h"
 #endif
 
+#if ENABLED(HX711_SENSOR)
+  #include "feature/hx711.h"
+#endif
+
 #if ENABLED(POLL_JOG)
   #include "feature/joystick.h"
 #endif
@@ -1645,6 +1649,10 @@ void setup() {
 
   #if ENABLED(BD_SENSOR)
     SETUP_RUN(bdl.init(I2C_BD_SDA_PIN, I2C_BD_SCL_PIN, I2C_BD_DELAY));
+  #endif
+
+  #if ENABLED(HX711_SENSOR)
+    SETUP_RUN(hx711_init());
   #endif
 
   marlin_state = MF_RUNNING;

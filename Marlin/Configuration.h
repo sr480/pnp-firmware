@@ -3408,3 +3408,5 @@
 
 // Disable servo with M282 to reduce power consumption, noise, and heat when not in use
 //#define SERVO_DETACH_GCODE
+
+#define HX711_SENSOR

@@ -1054,6 +1054,10 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 951: M951(); break;                                  // M951: Set Magnetic Parking Extruder parameters
       #endif
 
+      #if ENABLED(HX711_SENSOR)
+        case 901: M901(); break;                                  // M901: Read HX711 load cell(s)
+      #endif
+
       #if ENABLED(Z_STEPPER_AUTO_ALIGN)
         case 422: M422(); break;                                  // M422: Set Z Stepper automatic alignment position using probe
       #endif

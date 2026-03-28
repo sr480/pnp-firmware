@@ -521,6 +521,14 @@
 #define AUX3_05                               52
 #define AUX3_06                               53
 
+// HX711 load cell (defaults can be overridden in Configuration_adv.h)
+#ifndef HX711_1_DOUT_PIN
+  #define HX711_1_DOUT_PIN                     53
+#endif
+#ifndef HX711_1_SCK_PIN
+  #define HX711_1_SCK_PIN                      51
+#endif
+
 //
 // AUX4    5V GND D32 D47 D45 D43 D41 D39 D37 D35 D33 D31 D29 D27 D25 D23 D17 D16
 //
