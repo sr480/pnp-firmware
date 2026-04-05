@@ -109,20 +109,18 @@
 //
 #ifndef X_STOP_PIN
   #ifndef X_MIN_PIN
-    #define X_MIN_PIN                          3  // X-
+  //   #define X_MIN_PIN                          3  // X-
   #endif
   #ifndef X_MAX_PIN
-    #define X_MAX_PIN                          2  // X+
+    #define X_MAX_PIN                          3  // X+
   #endif
 #endif
 #ifndef Y_STOP_PIN
+  #ifndef Y_MIN_PIN
+    #define Y_MIN_PIN                         15  // Y-
+  #endif
   #ifndef Y_MAX_PIN
     #define Y_MAX_PIN                         14  // Y+
-  #endif
-#endif
-#ifndef Y2_STOP_PIN
-  #ifndef Y2_MAX_PIN
-    #define Y2_MAX_PIN                         15  // Y2+
   #endif
 #endif
 #ifndef Z_STOP_PIN
@@ -171,30 +169,30 @@
   #define Z_CS_PIN                       AUX2_06
 #endif
 
-#ifndef I_STEP_PIN
-  #define I_STEP_PIN                         26
-#endif
-#ifndef I_DIR_PIN
-  #define I_DIR_PIN                          28
-#endif
-#ifndef I_ENABLE_PIN
-  #define I_ENABLE_PIN                       24
-#endif
-#ifndef I_CS_PIN
-  #define I_CS_PIN                      AUX2_08
-#endif
-
 #ifndef Y2_STEP_PIN
-  #define Y2_STEP_PIN                         36
+  #define Y2_STEP_PIN                         26
 #endif
 #ifndef Y2_DIR_PIN
-  #define Y2_DIR_PIN                          34
+  #define Y2_DIR_PIN                          28
 #endif
 #ifndef Y2_ENABLE_PIN
-  #define Y2_ENABLE_PIN                       30
+  #define Y2_ENABLE_PIN                       24
 #endif
 #ifndef Y2_CS_PIN
-  #define Y2_CS_PIN                      AUX2_07
+  #define Y2_CS_PIN                      AUX2_08
+#endif
+
+#ifndef I_STEP_PIN
+  #define I_STEP_PIN                         36
+#endif
+#ifndef I_DIR_PIN
+  #define I_DIR_PIN                          34
+#endif
+#ifndef I_ENABLE_PIN
+  #define I_ENABLE_PIN                       30
+#endif
+#ifndef I_CS_PIN
+  #define I_CS_PIN                      AUX2_07
 #endif
 
 //
